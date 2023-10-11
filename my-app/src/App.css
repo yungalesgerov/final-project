@@ -27,6 +27,73 @@
 .App-link {
   color: #61dafb;
 }
+.header {
+  width: 1440px;
+  border: 1px solid green;
+  height: 93px;
+  display: flex ;
+  /* justify-content: space-between; */
+}
+.logo {
+  width: 141px;
+  height: 141px;
+  margin-left: 60px;
+}
+.user {
+  justify-content: space-between;
+  display: flex;
+  width: 251px;
+  border: 1px solid grey;
+  height: 26px;
+  margin-left: 291px;
+  margin-top: 33px;
+
+
+}
+.header-links {
+  display: flex;
+  width: 236px;
+  height: 17px;
+  justify-content: space-between;
+  margin-left: 401px;
+  margin-top: 38px;
+}
+.userSlash {
+  width: 2px;
+  height: auto;
+  background-color: #029491;
+}
+.Main {
+  width: 1440px;
+  height: 2637px;
+  border: 1px solid red;
+}
+.Footer {
+  width: 1440px;
+  height: 137px;
+  border: 1px solid green;
+  background-color: #029491;
+  display: flex;
+}
+.footer-logo  {
+  margin-left: 60px;
+  width: 141px;
+  height: 141px;
+}
+.footer-info {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: right;
+  line-height: 16.94px;
+  width: 199px;
+  height: 87px;
+  margin-left: 995px;
+  margin-top: 25px;
+  color: #fff;
+}
+.copyright {
+  margin-top: 21px;
+}
 
 @keyframes App-logo-spin {
   from {
