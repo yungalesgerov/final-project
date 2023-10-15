@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'ferry_black';
+  src: local('ferry_black'),
+    url('./fonts/ferry_black.otf') format('truetype');
+  font-weight: 900;
+}
