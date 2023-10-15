@@ -12,6 +12,7 @@ import cardLogo2 from './Group 1171274215.svg';
 import cardLogo3 from './Group 1171274216.svg';
 import check from './icons8-галочка-96 4.svg';
 import '../../index.css';
+
 const Button = styled.button`
     cursor:pointer;
     background-color: ${props => props.auth? '#D2D2D2' : '#5970FF'};
