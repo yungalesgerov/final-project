@@ -12,6 +12,7 @@ import cardLogo2 from './Group 1171274215.svg';
 import cardLogo3 from './Group 1171274216.svg';
 import check from './icons8-галочка-96 4.svg';
 import '../../index.css';
+import SimpleSlider from "../SimpleSlider/SimpleSLider";
 
 const Button = styled.button`
     cursor:pointer;
@@ -183,7 +184,7 @@ const Main = ({auth,setAuth}) => {
                 <Title className="title2" >Почему именно мы</Title>
                 <div style={{display:'flex',justifyContent: "space-between" ,marginTop:70}}> 
                     <img src={arrowRight} alt="arrow" />
-                    <div className="divInfo">
+                    {/* <div className="divInfo">
                         <img src={textLogo1} alt="logo1" />
                         <TextDiv>Высокая и оперативная скорость <br /> обработки заявки</TextDiv>
                     </div>
@@ -194,7 +195,8 @@ const Main = ({auth,setAuth}) => {
                     <div className="divInfo">
                         <img src={textLogo3} alt="logo3" />
                         <TextDiv>Защита конфеденциальных сведений, <br /> не подлежащих разглашению по <br /> федеральному законодательству</TextDiv>
-                    </div>
+                    </div> */}
+                    <SimpleSlider />
                     <img src={arrowLeft} alt='arrow' /> 
                 </div>
                 
