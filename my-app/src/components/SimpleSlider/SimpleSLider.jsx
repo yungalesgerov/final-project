@@ -10,8 +10,7 @@ const StyledDiv = styled.div`
     width: 400px;
     height:225px;
     border-radius: 10px;
-    border: 1px solid;
-    box-shadow: 0px 0px 20px 0px #00000033;
+    /* border: 1px solid; */
     box-shadow: 0px 0px 20px 0px #00000033;
 
     img {
@@ -40,7 +39,7 @@ export default function SimpleSlider() {
         slidesToScroll: 1
     };
     return (
-        <Slider style={{ width: 1248 }} {...settings}>
+        <Slider style={{ width: 1260}} {...settings}>
             <StyledDiv >
                 <img src={textLogo1} alt="logo1" />
                 <TextDiv>Высокая и оперативная скорость <br /> обработки заявки</TextDiv>
