@@ -4,14 +4,11 @@ import mainImg1 from './Group 13.svg';
 import mainImg2 from './Group 14.svg';
 import arrowRight from './icons8-шеврон-вправо-90 1.svg';
 import arrowLeft from './icons8-шеврон-вправо-90 2.svg';
-import textLogo1 from './Mask group (1).svg'
-import textLogo2 from './Mask group (2).svg'
-import textLogo3 from './Mask group (3).svg'
 import cardLogo1 from './Group 1171274214.svg';
 import cardLogo2 from './Group 1171274215.svg';
 import cardLogo3 from './Group 1171274216.svg';
 import check from './icons8-галочка-96 4.svg';
-import SimpleSlider from '../slider/slider';
+import SimpleSlider from '../SimpleSlider/SimpleSLider';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../../index.css';
@@ -58,18 +55,6 @@ const ContentDiv = styled.div`
     margin: 0 auto;
     img:nth-child(2) {
         margin-left: 157px;
-    }
-    .divInfo {
-        width: 400px;
-        height:225px;
-        border-radius: 10px;
-        border: 1px solid red;
-        box-shadow: 0px 0px 20px 0px #00000033;
-
-        img {
-            margin: 30px 0px 19px 24px;
-        }
-        
     }
     .headerCard {
         position: relative;
@@ -186,19 +171,8 @@ const Main = ({ auth, setAuth }) => {
                 <Title className="title2" >Почему именно мы</Title>
                 <div style={{ display: 'flex', justifyContent: "space-between", marginTop: 70 }}>
                     <img src={arrowRight} alt="arrow" />
-                    <div className="divInfo">
-                        <img src={textLogo1} alt="logo1" />
-                        <TextDiv>Высокая и оперативная скорость <br /> обработки заявки</TextDiv>
-                    </div>
-                    <div className="divInfo">
-                        <img src={textLogo2} alt="logo2" />
-                        <TextDiv> Огромная комплексная база <br /> данных, обеспечивающая <br />    объективный ответ на запрос</TextDiv>
-                    </div>
-                    <div className="divInfo">
-                        <img src={textLogo3} alt="logo3" />
-                        <TextDiv>Защита конфеденциальных сведений, <br /> не подлежащих разглашению по <br /> федеральному законодательству</TextDiv>
-                    </div>
-                    <img src={arrowLeft} alt='arrow' />
+                    <SimpleSlider />
+                    <img src={arrowLeft} alt='arrow' /> 
                 </div>
             </ContentDiv >
             <ContentDiv style={{ height: 575.52, width: 1307 }} >
