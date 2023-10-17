@@ -11,15 +11,18 @@ import cardLogo1 from './Group 1171274214.svg';
 import cardLogo2 from './Group 1171274215.svg';
 import cardLogo3 from './Group 1171274216.svg';
 import check from './icons8-галочка-96 4.svg';
+import SimpleSlider from '../slider/slider';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import '../../index.css';
 
 const Button = styled.button`
     cursor:pointer;
-    background-color: ${props => props.auth? '#D2D2D2' : '#5970FF'};
+    background-color: ${props => props.auth ? '#D2D2D2' : '#5970FF'};
     border: none;
     height: 59px;
     width : 355px;
-    color:${props => props.auth? '#000' : '#fff'}; 
+    color:${props => props.auth ? '#000' : '#fff'}; 
     font-family: inter;
     margin-left: 30px;
     
@@ -161,27 +164,27 @@ const TextDiv = styled.div`
     }
 `
 
-const Main = ({auth,setAuth}) => {
-    
+const Main = ({ auth, setAuth }) => {
+
     return (
         <MainWrapper>
-            <ContentDiv  style={{ height: 620, display: "flex" }} >
-                <div style={{position: 'relative'}}>
-                    <Title style={{position: 'absolute',marginTop:45}} > сервис по поиску
-                    <br /> публикаций
-                    <br /> о компании
-                    <br />по его ИНН
+            <ContentDiv style={{ height: 620, display: "flex" }} >
+                <div style={{ position: 'relative' }}>
+                    <Title style={{ position: 'absolute', marginTop: 45 }} > сервис по поиску
+                        <br /> публикаций
+                        <br /> о компании
+                        <br />по его ИНН
                     </Title>
                     <TextDiv className="titleSub" >
                         Комплексный анализ публикаций, получение данных <br /> в формате PDF на электронную почту.
                     </TextDiv>
-                    <Button style={{fontSize: 22,margin:0}}>Запросить данные</Button> 
+                    <Button style={{ fontSize: 22, margin: 0 }}>Запросить данные</Button>
                 </div>
-                    <img src={mainImg1} alt="mainImg1" />
+                <img src={mainImg1} alt="mainImg1" />
             </ContentDiv>
             <ContentDiv style={{ height: 349, width: 1346 }} >
                 <Title className="title2" >Почему именно мы</Title>
-                <div style={{display:'flex',justifyContent: "space-between" ,marginTop:70}}> 
+                <div style={{ display: 'flex', justifyContent: "space-between", marginTop: 70 }}>
                     <img src={arrowRight} alt="arrow" />
                     <div className="divInfo">
                         <img src={textLogo1} alt="logo1" />
@@ -195,94 +198,92 @@ const Main = ({auth,setAuth}) => {
                         <img src={textLogo3} alt="logo3" />
                         <TextDiv>Защита конфеденциальных сведений, <br /> не подлежащих разглашению по <br /> федеральному законодательству</TextDiv>
                     </div>
-                    <img src={arrowLeft} alt='arrow' /> 
+                    <img src={arrowLeft} alt='arrow' />
                 </div>
-                
-                
             </ContentDiv >
             <ContentDiv style={{ height: 575.52, width: 1307 }} >
                 <img src={mainImg2} alt='mainimg2' />
-                
+
             </ContentDiv>
             <ContentDiv style={{ height: 664 }} >
                 <Title className="title2"> наши тарифы </Title>
-                <div className="cards" style={{display:'flex'}}>
+                <div className="cards" style={{ display: 'flex' }}>
                     <div className="card-item card-item1">
-                        <div className="headerCard" style={{backgroundColor:'#FFB64F'}} >
-                            <h2 style={{width:131,height:36}}>Beginner</h2>
+                        <div className="headerCard" style={{ backgroundColor: '#FFB64F' }} >
+                            <h2 style={{ width: 131, height: 36 }}>Beginner</h2>
                             <TextDiv className="headerCardText">Для небольшого исследования</TextDiv>
-                            <img style={{position:'absolute'}} src={cardLogo2} alt="cardLogo2" />
+                            <img style={{ position: 'absolute' }} src={cardLogo2} alt="cardLogo2" />
                         </div>
                         <div>
-                            <div style={{display:"flex"}}>
+                            <div style={{ display: "flex" }}>
                                 <div className="currentPrice">799 ₽</div>
                                 <div className="oldPrice">1 200 ₽</div>
                                 <div className="currentTarif"> <span>Текущий тариф</span></div>
                             </div>
                             <TextDiv className='tarif-credit'>или 150 ₽/мес. при рассрочке на 24 мес.</TextDiv>
                             <TextDiv className="tarifInfo">
-                                <h3 style={{margin:0}}>В тариф входит: </h3>
-                                <div style={{marginTop:10}}>
+                                <h3 style={{ margin: 0 }}>В тариф входит: </h3>
+                                <div style={{ marginTop: 10 }}>
                                     <img src={check} alt="check" /><span>Безлимитная история запросов</span>
                                     <br /><img src={check} alt="check" /><span>Безопасная сделка</span>
                                     <br /><img src={check} alt="check" /><span>Поддержка 24/7</span>
                                 </div>
-                                
+
                             </TextDiv>
-                            {auth?<Button auth>Перейти в личный кабинет</Button>: <Button>Подробнее</Button>}
+                            {auth ? <Button auth>Перейти в личный кабинет</Button> : <Button>Подробнее</Button>}
                         </div>
                     </div>
                     <div className="card-item card-item2">
-                        <div className="headerCard" style={{backgroundColor:'#7CE3E1'}} >
-                            <h2 style={{width:131,height:36}}>Pro</h2>
+                        <div className="headerCard" style={{ backgroundColor: '#7CE3E1' }} >
+                            <h2 style={{ width: 131, height: 36 }}>Pro</h2>
                             <TextDiv className="headerCardText">Для HR и фрилансеров</TextDiv>
-                            <img style={{position:'absolute',}} src={cardLogo3} alt="cardLogo3"      />
+                            <img style={{ position: 'absolute', }} src={cardLogo3} alt="cardLogo3" />
                         </div>
                         <div>
-                            <div style={{display:"flex"}}>
+                            <div style={{ display: "flex" }}>
                                 <div className="currentPrice">1 299 ₽</div>
                                 <div className="oldPrice">2 600 ₽</div>
                             </div>
                             <TextDiv className='tarif-credit'>или 279 ₽/мес. при рассрочке на 24 мес.</TextDiv>
                             <TextDiv className="tarifInfo">
-                                <h3 style={{margin:0}}>В тариф входит: </h3>
-                                <div style={{marginTop:10}}>
+                                <h3 style={{ margin: 0 }}>В тариф входит: </h3>
+                                <div style={{ marginTop: 10 }}>
                                     <img src={check} alt="check" /><span>Все пункты тарифа Beginner</span>
                                     <br /><img src={check} alt="check" /><span>Экспорт истории</span>
                                     <br /><img src={check} alt="check" /><span>Рекомендации по приоритетам</span>
                                 </div>
-                                
+
                             </TextDiv>
-                            {auth?<Button auth>Перейти в личный кабинет</Button>: <Button>Подробнее</Button>}
+                            {auth ? <Button auth>Перейти в личный кабинет</Button> : <Button>Подробнее</Button>}
                         </div>
                     </div>
                     <div className="card-item card-item3">
-                        <div className="headerCard" style={{backgroundColor:'#000000',color:'#fff'}} >
-                            <h2 style={{width:131,height:36}}>Business</h2>
+                        <div className="headerCard" style={{ backgroundColor: '#000000', color: '#fff' }} >
+                            <h2 style={{ width: 131, height: 36 }}>Business</h2>
                             <TextDiv className="headerCardText">Для корпоративных клиентов</TextDiv>
-                            <img style={{position:'absolute'}} src={cardLogo1} alt="cardLogo2" />
+                            <img style={{ position: 'absolute' }} src={cardLogo1} alt="cardLogo2" />
                         </div>
                         <div>
-                            <div style={{display:"flex"}}>
+                            <div style={{ display: "flex" }}>
                                 <div className="currentPrice">2 379 ₽</div>
                                 <div className="oldPrice">3 700 ₽</div>
                             </div>
-                            <TextDiv className='tarif-credit'></TextDiv>
+                            <TextDiv className='tarif-credit' style={{border:'none'}}></TextDiv>
                             <TextDiv className="tarifInfo">
-                                <h3 style={{margin:0}}>В тариф входит: </h3>
-                                <div style={{marginTop:10}}>
+                                <h3 style={{ margin: 0 }}>В тариф входит: </h3>
+                                <div style={{ marginTop: 10 }}>
                                     <img src={check} alt="check" /><span>Безлимитная история запросов</span>
                                     <br /><img src={check} alt="check" /><span>Безопасная сделка</span>
                                     <br /><img src={check} alt="check" /><span>Поддержка 24/7</span>
                                 </div>
-                                
+
                             </TextDiv>
-                            {auth?<Button auth>Перейти в личный кабинет</Button>: <Button>Подробнее</Button>}
+                            {auth ? <Button auth>Перейти в личный кабинет</Button> : <Button>Подробнее</Button>}
                         </div>
                     </div>
 
                 </div>
-                
+
             </ContentDiv>
         </MainWrapper>
     )
