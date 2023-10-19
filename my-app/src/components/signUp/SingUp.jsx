@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-
+import { useDispatch } from "react-redux";
+import { logIn } from "../../features/userSlice";
 
 const Button = styled.button`
     cursor:pointer;
