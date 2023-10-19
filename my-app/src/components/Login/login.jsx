@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Header from '../Header/Header';
 import Footer from "../Footer/Footer";
 import pplImg from './Characters.svg';
+import useSelector from "react"
 import lock from './Group 1171274237.svg';
 import google from './Group 1171274229.svg';
 import facebook from './Group 1171274230.svg';
@@ -47,7 +48,7 @@ const Input = styled.input`
 
 const Wrapper = styled.div`
     width:1440px;
-    height:902px;
+    height:673px;
     border:1px solid black;
 
 `
@@ -153,7 +154,7 @@ const LoginPage = ({auth,setAuth}) => {
 
     return (
         <Wrapper >
-            <Header auth />
+            {/* <Header auth /> */}
             <ContentDiv >
                 <div className="main">
                     <Title>Для оформления подписки на тариф, необходимо авторизоваться.</Title>
@@ -174,16 +175,16 @@ const LoginPage = ({auth,setAuth}) => {
                         </div>
 
                         <div className="signUp">
-                            <Button >Войти</Button>
+                            <Button onClick={()=>setAuth(true)} >Войти</Button>
                             <a href="#">Восстановить пароль</a>
                             
                         </div>
                         <div className="signUpWith">
                                 <span>Войти через:</span>
                                 <div>
-                                    <img src={google} alt="google" />
-                                    <img src={facebook} alt="facebook" />
-                                    <img src={yandex} alt="yandex" />
+                                    <a href="#"><img src={yandex} alt="yandex" /></a>
+                                    <a href="#"><img src={facebook} alt="facebook" /></a>
+                                   <a href="#"><img src={google} alt="google" /></a> 
                                 </div>
                                 
                         </div>
@@ -191,7 +192,7 @@ const LoginPage = ({auth,setAuth}) => {
                 </div>
 
             </ContentDiv>
-            <Footer/>
+            {/* <Footer/> */}
         </Wrapper>
     )
 }

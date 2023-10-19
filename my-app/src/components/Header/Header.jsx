@@ -1,7 +1,10 @@
 import React from "react";
 import logo from '../Header/SGN_09_24_2022_1663968217400 1.svg'
 import userPhoto  from './Mask group.svg';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import {useNavigate} from 'react-router-dom';
+// import Spinner from '../spinner/spiner';
+
 const HeaderBlock = styled.div`
   width: 1440px;
   border: 1px solid green;
@@ -11,6 +14,7 @@ const HeaderBlock = styled.div`
     width: 141px;
     height: 141px;
     margin-left: 60px;
+    cursor:pointer;
   }
   .user {
     justify-content: space-between;
@@ -116,9 +120,10 @@ const HeaderBlock = styled.div`
 `
 
 const Header = ({auth,setAuth}) => {
+    const navigate = useNavigate();
     return (
         <HeaderBlock>
-            <div className="logo"><img src={logo} alt="logo" /></div>
+            <div className="logo" onClick={()=>navigate('/')}><img src={logo} alt="logo" /></div>
             <div className="header-links">
                 <a  href="#">Главная</a>
                 <a  href="#">Тарифы</a>
@@ -128,18 +133,18 @@ const Header = ({auth,setAuth}) => {
                 <div className="user">
                 <span>Зарегистрироваться</span>
                 <div className="userSlash"></div>
-                <button onClick={()=>setAuth(!auth)} className="signIn">Войти</button>
+                <button onClick={()=>navigate('/authorization')} className="signIn">Войти</button>
                 </div> : 
              <>
-             <div className="header-stats"><div>Использовано компаний  <span> {`34`}</span> </div>  <br /><div>Лимит по компаниям <span> {`100`}</span></div> </div>
-             <div className="auth-user">
-                <div>
-                    <span>Алексей А.</span>
-                    <div className="exit">Выйти</div>
+                <div className="header-stats"><div>Использовано компаний  <span> {`34`}</span> </div>  <br /><div>Лимит по компаниям <span> {`100`}</span></div> </div>
+                <div className="auth-user">
+                    <div>
+                        <span>Алексей А.</span>
+                        <div className="exit">Выйти</div>
+                    </div>
+                    <div ><img src={userPhoto}  alt="userPhoto" /></div>
                 </div>
-                <div ><img src={userPhoto}  alt="userPhoto" /></div>
-             </div>
-             </>
+              </>
             }
             
         </HeaderBlock>

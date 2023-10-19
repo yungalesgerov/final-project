@@ -22,32 +22,8 @@
   height: 2637px;
   border: 1px solid red;
 }
-.Footer {
-  width: 1440px;
-  height: 137px;
-  border: 1px solid green;
-  background-color: #029491;
-  display: flex;
-}
-.footer-logo  {
-  margin-left: 60px;
-  width: 141px;
-  height: 141px;
-}
-.footer-info {
-  font-size: 14px;
-  font-weight: 400;
-  text-align: right;
-  line-height: 16.94px;
-  width: 199px;
-  height: 87px;
-  margin-left: 995px;
-  margin-top: 25px;
-  color: #fff;
-}
-.copyright {
-  margin-top: 21px;
-}
+
+
 
 @keyframes App-logo-spin {
   from {
