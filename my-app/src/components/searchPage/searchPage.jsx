@@ -3,6 +3,7 @@ import styled from "styled-components";
 import doc from './Document.svg';
 import folders from './Folders.svg';
 import rocket from './Group 1171274244.svg'
+import SearchPageTable from "./searchPageTable";
 const ContentDiv = styled.div`
     width:1380px;
     height:892px;
@@ -13,7 +14,7 @@ const ContentDiv = styled.div`
         position:absolute;
         margin: -472px 0 0 989px;
     }
-    div:first-child {
+    .searchDiv {
         width:1298px;
         height:214px;
         border:1px solid black;
@@ -59,14 +60,14 @@ const SearchPage = () => {
 
     return (
         <ContentDiv>
-            <div>
+            <div className="searchDiv">
                 <Title>Найдите необходимые <br /> данные в пару кликов.</Title>
                 <span>Задайте параметры поиска. <br /> Чем больше заполните, тем точнее поиск</span>
                 <img className="doc" src={doc} alt="document" />
                 <img src={folders} alt="folders" />
             </div>
             <SearchPanel >
-                <h1>something</h1>
+                <SearchPageTable />
             </SearchPanel>
             <img src={rocket} alt="rocket" />
 
