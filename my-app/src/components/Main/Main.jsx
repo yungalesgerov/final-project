@@ -12,6 +12,7 @@ import SimpleSlider from '../SimpleSlider/SimpleSLider';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../../index.css';
+import { useNavigate } from "react-router-dom";
 
 const Button = styled.button`
     cursor:pointer;
@@ -22,7 +23,7 @@ const Button = styled.button`
     color:${props => props.auth ? '#000' : '#fff'}; 
     font-family: inter;
     margin-left: 30px;
-    
+    font-size:20px;
 `
 
 const MainWrapper = styled.div`
@@ -149,8 +150,8 @@ const TextDiv = styled.div`
     }
 `
 
-const Main = ({ auth, setAuth }) => {
-
+const Main = ({ auth }) => {
+    const navigate = useNavigate();
     return (
         <MainWrapper>
             <ContentDiv style={{ height: 620, display: "flex" }} >
@@ -163,7 +164,12 @@ const Main = ({ auth, setAuth }) => {
                     <TextDiv className="titleSub" >
                         Комплексный анализ публикаций, получение данных <br /> в формате PDF на электронную почту.
                     </TextDiv>
-                    <Button style={{ fontSize: 22, margin: 0 }}>Запросить данные</Button>
+                    <Button
+                        style={{ fontSize: 22, margin: 0, opacity: auth ? 1 : 0.5 }}
+                        disabled={auth ? false : true}
+                        onClick={()=>navigate('/search')}
+                    >Запросить данные
+                    </Button>
                 </div>
                 <img src={mainImg1} alt="mainImg1" />
             </ContentDiv>
@@ -172,7 +178,7 @@ const Main = ({ auth, setAuth }) => {
                 <div style={{ display: 'flex', justifyContent: "space-between", marginTop: 70 }}>
                     <img src={arrowRight} alt="arrow" />
                     <SimpleSlider />
-                    <img src={arrowLeft} alt='arrow' /> 
+                    <img src={arrowLeft} alt='arrow' />
                 </div>
             </ContentDiv >
             <ContentDiv style={{ height: 575.52, width: 1307 }} >
@@ -228,7 +234,7 @@ const Main = ({ auth, setAuth }) => {
                                 </div>
 
                             </TextDiv>
-                            {auth ? <Button auth>Перейти в личный кабинет</Button> : <Button>Подробнее</Button>}
+                            <Button>Подробнее</Button>
                         </div>
                     </div>
                     <div className="card-item card-item3">
@@ -242,7 +248,7 @@ const Main = ({ auth, setAuth }) => {
                                 <div className="currentPrice">2 379 ₽</div>
                                 <div className="oldPrice">3 700 ₽</div>
                             </div>
-                            <TextDiv className='tarif-credit' style={{border:'none'}}></TextDiv>
+                            <TextDiv className='tarif-credit' style={{ border: 'none' }}></TextDiv>
                             <TextDiv className="tarifInfo">
                                 <h3 style={{ margin: 0 }}>В тариф входит: </h3>
                                 <div style={{ marginTop: 10 }}>
@@ -252,7 +258,7 @@ const Main = ({ auth, setAuth }) => {
                                 </div>
 
                             </TextDiv>
-                            {auth ? <Button auth>Перейти в личный кабинет</Button> : <Button>Подробнее</Button>}
+                            <Button>Подробнее</Button>
                         </div>
                     </div>
 

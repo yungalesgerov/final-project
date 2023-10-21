@@ -18,3 +18,9 @@ code {
     url('./fonts/ferry_black.otf') format('truetype');
   font-weight: 900;
 }
+
+#root {
+  max-width:1440px;
+  height: 100%;
+  /* background: #000; */
+}

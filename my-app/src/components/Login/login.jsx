@@ -1,7 +1,5 @@
-import React from "react";
+import React,{useState} from "react";
 import styled from "styled-components";
-import Header from '../Header/Header';
-import Footer from "../Footer/Footer";
 import pplImg from './Characters.svg';
 import useSelector from "react"
 import lock from './Group 1171274237.svg';
@@ -91,15 +89,7 @@ const ContentDiv = styled.div`
                 margin:15px 0 15px;
             }
             margin-bottom: 30px;
-            .worstLogin, .worstPassword {
-                color:red;
-                position: absolute;
-                margin-top:-16px;
-                margin-left:80px;
-            }
-            .worstPassword {
-                margin-left:100px;
-            }
+            
         }
         .signUp {
             margin-left:25px;
@@ -137,7 +127,8 @@ const ContentDiv = styled.div`
 `
 
 const LoginPage = ({ auth, setAuth }) => {
-
+    const [wrongData,setWrongData] = useState(false);
+ 
     return (
         <Wrapper >
             <ContentDiv >
@@ -148,7 +139,11 @@ const LoginPage = ({ auth, setAuth }) => {
                 <div className="user">
                     <img src={lock} alt="lock" />
                     <div className="userDiv">
-                        <SingUp setAuth={setAuth} />
+                        <SingUp
+                           wrongData={wrongData}
+                           setWrongData={setWrongData} 
+                           setAuth={setAuth}
+                        />
                         <div className="signUpWith">
                             <span>Войти через:</span>
                             <div>

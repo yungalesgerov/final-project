@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import LoginPage from './components/Login/login';
 import {Routes, Route, useNavigate, useLocation, BrowserRouter} from "react-router-dom";
+import SearchPage from './components/searchPage/searchPage';
 const AppBlock = styled.div`
     width: 1440px;
     height:2867px;
@@ -18,8 +19,9 @@ function App() {
       <AppBlock>
         <Header auth={auth} setAuth={setAuth} />
         <Routes>
-          <Route path={"/"} exact element={<Main />} />
+          <Route path={"/"} exact element={<Main auth={auth} />} />
           <Route path={"/authorization"} element={<LoginPage setAuth={setAuth} auth={auth} />} />
+          <Route path={"/search"} element={<SearchPage />} />
         </Routes>
         <Footer/>
       </AppBlock>

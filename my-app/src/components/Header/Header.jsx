@@ -1,9 +1,12 @@
 import React from "react";
 import logo from '../Header/SGN_09_24_2022_1663968217400 1.svg'
-import userPhoto  from './Mask group.svg';
 import styled from 'styled-components';
-import {useNavigate} from 'react-router-dom';
-// import Spinner from '../spinner/spiner';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from "react-redux";
+import { selectUser } from "../../jsAdditions/userSlice";
+import TableInfo from "./TableInfo";
+import Spinner from '../spinner/spiner';
+
 
 const HeaderBlock = styled.div`
   width: 1440px;
@@ -114,40 +117,33 @@ const HeaderBlock = styled.div`
     div:nth-child(2) {
       margin-left: 3px;
       width:32px;
-      heigth:32px;
+      height:32px;
     }
   }
 `
 
-const Header = ({auth,setAuth}) => {
-    const navigate = useNavigate();
-    return (
-        <HeaderBlock>
-            <div className="logo" onClick={()=>navigate('/')}><img src={logo} alt="logo" /></div>
-            <div className="header-links">
-                <a  href="#">Главная</a>
-                <a  href="#">Тарифы</a>
-                <a href="#" >FAQ</a>
-            </div>
-            {!auth? 
-                <div className="user">
-                <span>Зарегистрироваться</span>
-                <div className="userSlash"></div>
-                <button onClick={()=>navigate('/authorization')} className="signIn">Войти</button>
-                </div> : 
-             <>
-                <div className="header-stats"><div>Использовано компаний  <span> {`34`}</span> </div>  <br /><div>Лимит по компаниям <span> {`100`}</span></div> </div>
-                <div className="auth-user">
-                    <div>
-                        <span>Алексей А.</span>
-                        <div className="exit">Выйти</div>
-                    </div>
-                    <div ><img src={userPhoto}  alt="userPhoto" /></div>
-                </div>
-              </>
-            }
-            
-        </HeaderBlock>
-    )
+const Header = () => {
+  const navigate = useNavigate();
+  const user = useSelector(selectUser);
+  return (
+    <HeaderBlock>
+      <div className="logo" onClick={() => navigate('/')}><img src={logo} alt="logo" /></div>
+      <div className="header-links">
+        <a href="#">Главная</a>
+        <a href="#">Тарифы</a>
+        <a href="#" >FAQ</a>
+      </div>
+      {user ? <TableInfo /> : 
+        <>
+          <div className="user">
+            <span>Зарегистрироваться</span>
+            <div className="userSlash"></div>
+            <button onClick={() => navigate('/authorization')} className="signIn">Войти</button>
+          </div>
+        </>
+      }
+
+    </HeaderBlock>
+  )
 }
 export default Header;
