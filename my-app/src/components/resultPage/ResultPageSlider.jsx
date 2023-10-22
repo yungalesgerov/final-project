@@ -65,6 +65,9 @@ function ResultPageSlider() {
             />
             {tableData.map(item=> console.log(item))}
             <h1>something</h1>
+            <h1>something</h1>
+            <h1>something</h1>
+            <h1>something</h1>
         </div>
     );
 }
