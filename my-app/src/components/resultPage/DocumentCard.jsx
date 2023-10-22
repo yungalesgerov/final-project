@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
-// import "./ResultPage.css";
+import "./ResultPage.css";
 import example from "./screen.svg";
 
 function DocumentCard({
