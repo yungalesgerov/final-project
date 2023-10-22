@@ -63,7 +63,8 @@ function ResultPageSlider() {
                     x: tableData.length * 100,
                 }}
             />
-            {tableData.map(item=> console.log(item))}1
+            {tableData.map(item=> console.log(item))}
+            <h1>something</h1>
         </div>
     );
 }
