@@ -5,7 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import { selectUser } from "../../jsAdditions/userSlice";
 import TableInfo from "./TableInfo";
-import Spinner from '../spinner/spiner';
+// import Spinner from '../spinner/spiner';
+import BurgerMenu from "./burgerMenu";
+import './burgerMenu.css';
 
 
 const HeaderBlock = styled.div`
@@ -13,11 +15,17 @@ const HeaderBlock = styled.div`
   border: 1px solid green;
   height: 93px;
   display: flex ;
+  position:relative;
+  
+  .bm {
+    position:absolute;
+  }
   .logo {
     width: 141px;
     height: 141px;
     margin-left: 60px;
     cursor:pointer;
+    
   }
   .user {
     justify-content: space-between;
@@ -120,20 +128,38 @@ const HeaderBlock = styled.div`
       height:32px;
     }
   }
+  @media screen and (max-width:376px) {
+    width: 375px; 
+    .logo {
+      width:111px;
+      height:111px;
+      margin: 9px 0 0 14px;
+      /* border:1px solid green; */
+      img {
+        width:111px;
+      }
+    }
+    .header-links {
+      display:none;
+    }
+    .user {
+      display:none;
+    }
+  }
 `
 
 const Header = () => {
   const navigate = useNavigate();
   const user = useSelector(selectUser);
   return (
-    <HeaderBlock>
+    <HeaderBlock >
       <div className="logo" onClick={() => navigate('/')}><img src={logo} alt="logo" /></div>
       <div className="header-links">
         <a href="#">Главная</a>
         <a href="#">Тарифы</a>
         <a href="#" >FAQ</a>
       </div>
-      {user ? <TableInfo /> : 
+      {user ? <TableInfo /> :
         <>
           <div className="user">
             <span>Зарегистрироваться</span>
@@ -142,6 +168,7 @@ const Header = () => {
           </div>
         </>
       }
+      <BurgerMenu className='bm' />
 
     </HeaderBlock>
   )

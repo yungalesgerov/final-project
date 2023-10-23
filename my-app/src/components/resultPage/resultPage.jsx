@@ -5,9 +5,9 @@ import "./ResultPage.css";
 import result_icon from "./result_icon.svg";
 import ResultPageSlider from "./ResultPageSlider";
 import DocumentCard from "./DocumentCard";
-import { selectData } from "../../jsAdditions//histogramsSlice";
-import { selectHistograms } from "../../jsAdditions//histogramsSlice";
-import { getCardsData } from "../../jsAdditions//getCardsData";
+import { selectData } from "../../jsAdditions/histogramsSlice";
+import { selectHistograms } from "../../jsAdditions/histogramsSlice";
+import { getCardsData } from "../../jsAdditions/getCardsData";
 
 function ResultPage() {
   const resultData = useSelector(selectData);

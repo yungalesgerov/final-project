@@ -24,6 +24,7 @@ const Button = styled.button`
     font-family: inter;
     margin-left: 30px;
     font-size:20px;
+    border-radius:5px;
 `
 
 const MainWrapper = styled.div`
@@ -33,11 +34,14 @@ const MainWrapper = styled.div`
     display: flex;
     flex-wrap:wrap;
     align-content: space-around;
+    @media screen and (max-width:376px) {
+        width:375px;
+    }
 `
 const Title = styled.h1`
     width:743px;
     height: 288px;
-    background-color: red;
+    /* background-color: red; */
     font-family: ferry_black;
     font-size: 60px;
     line-height: 72px;
@@ -48,15 +52,27 @@ const Title = styled.h1`
         height:54px;
         font-size:45px;
     }
+    @media screen and (max-width:376px) {
+        width:361px;
+        height:136px;
+        font-size:28px;
+        line-height:33.6px;
+        margin-left:14px; 
+    }
 `
 
 const ContentDiv = styled.div`
     width: 1320px;
     border : 1px solid grey;
     margin: 0 auto;
-    img:nth-child(2) {
-        margin-left: 157px;
+    position:relative;
+    &:nth-child(1) {
+        display:flex;
     }
+    /* img:nth-child(2) {
+        margin-left: 157px;
+    } */
+    
     .headerCard {
         position: relative;
         width:415px;
@@ -116,7 +132,20 @@ const ContentDiv = styled.div`
             margin: 0px 0px  0px 4px;
         }
     }
-    
+    @media screen and (max-width:376px) {
+        &:nth-child(1) {
+            display:inline-block;
+        }
+        .mainImg {
+            /* position:absolute; */
+            width:347px;
+            height:342px;
+            /* margin: 356px  0 0 -14px; */
+            margin:0;
+            top: 200px;
+
+        }
+    }
 `
 const TextDiv = styled.div`
     font-family: inter;
@@ -129,7 +158,7 @@ const TextDiv = styled.div`
     margin-left:24px;
 
     &.titleSub {
-        margin-top: 353px;
+        margin-top: 20px;
         margin-bottom:70px;
         margin-left:0px;
         width: 534px;
@@ -148,15 +177,23 @@ const TextDiv = styled.div`
         height:22px;
         margin-bottom: 59px;
     }
+    @media screen and (max-width:376px) {
+        &.titleSub {
+            width:327px;
+            height:66px;
+            margin:19px 0 0 14px;
+            font-size:17px;
+        }
+    }
 `
 
 const Main = ({ auth }) => {
     const navigate = useNavigate();
     return (
         <MainWrapper>
-            <ContentDiv style={{ height: 620, display: "flex" }} >
-                <div style={{ position: 'relative' }}>
-                    <Title style={{ position: 'absolute', marginTop: 45 }} > сервис по поиску
+            <ContentDiv style={{ height: 620}} >
+                <div className="heroDiv" style={{border:"1px solid green"}} >
+                    <Title style={{marginTop: 45 }} > сервис по поиску
                         <br /> публикаций
                         <br /> о компании
                         <br />по его ИНН
@@ -167,11 +204,11 @@ const Main = ({ auth }) => {
                     <Button
                         style={{ fontSize: 22, margin: 0, opacity: auth ? 1 : 0.5 }}
                         disabled={auth ? false : true}
-                        onClick={()=>navigate('/search')}
+                        onClick={() => navigate('/search')}
                     >Запросить данные
                     </Button>
                 </div>
-                <img src={mainImg1} alt="mainImg1" />
+                <img src={mainImg1} className="mainImg" alt="mainImg1" />
             </ContentDiv>
             <ContentDiv style={{ height: 349, width: 1346 }} >
                 <Title className="title2" >Почему именно мы</Title>

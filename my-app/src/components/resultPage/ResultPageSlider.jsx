@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectHistograms } from "../../features/histogramsSlice";
+import { selectHistograms } from "../../jsAdditions/histogramsSlice";
 import { Table } from "antd";
 
 function ResultPageSlider() {
